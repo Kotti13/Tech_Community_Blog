@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
-
+import useFilteredContent from '../hooks/parsePostContent'
 interface CommentFormData {
   content: string;
 }
@@ -182,7 +182,7 @@ const PostDetailPage: React.FC = () => {
       console.error('Error adding comment:', err);
     }
   };
-  
+    
 
   if (isLoading) {
     return (
