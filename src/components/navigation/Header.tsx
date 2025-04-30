@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../hooks/useAuth';
 import { useTheme } from '../../hooks/useTheme';
 import { LuUser } from "react-icons/lu";
-import "../../Css/Nightmode.css";
+import "../../Css/Nightmode.css"
 
 
 // import Toggle from './ui/Toggle.jsx'; 
@@ -154,10 +154,10 @@ const Header: React.FC = () => {
             </div>
           ) : (
             <div className="flex items-center space-x-2">
-              <Link to="/login" className="px-4 py-2 text-primary-500 hover:text-primary-600 transition">
+              <Link to="/login" className="button">
                 Log In
               </Link>
-              <Link to="/signup" className="btn-17 px-4 py-2  rounded-md transition">
+              <Link to="/signup" className="button">
                 Sign Up
               </Link>
             </div>

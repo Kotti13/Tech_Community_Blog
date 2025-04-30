@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import LoadingSpinner from "../components/ui/LoadingSpinner";
-import useFilteredContent from '../hooks/parsePostContent'
+import { useContentParser } from '../hooks/useContentParser';
 interface CommentFormData {
   content: string;
 }
@@ -182,7 +182,10 @@ const PostDetailPage: React.FC = () => {
       console.error('Error adding comment:', err);
     }
   };
-    
+  
+
+ const filteredContent = useContentParser(post?.content || "");
+
 
   if (isLoading) {
     return (
@@ -284,9 +287,7 @@ const PostDetailPage: React.FC = () => {
             )}
 
             <div className="prose dark:prose-invert max-w-none mb-6">
-              <p className="text-neutral-700 dark:text-neutral-300 whitespace-pre-line">
-                {post.content}
-              </p>
+                {filteredContent}
             </div>
 
             {/* Hashtags */}
