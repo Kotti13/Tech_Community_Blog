@@ -49,8 +49,10 @@ const PostCard: React.FC<PostCardProps> = ({ post, onLike, onBookmark }) => {
           url: postUrl,
         });
       } catch (err) {
-        console.error('Error sharing:', err);
+        
+        // console.error('Error sharing:', err);
         copyToClipboard(postUrl);
+
       }
     } else {
       copyToClipboard(postUrl);
